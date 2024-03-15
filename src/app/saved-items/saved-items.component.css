@@ -1,0 +1,19 @@
+.saved-item-container{
+    border-radius: 5px;
+    margin: 3%;
+    padding: 2%;
+    width: 90%;
+    float: left;
+    color: antiquewhite;
+    background-color: blue;
+    border: 1px solid blue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.saved-item-container:hover{
+    color: blue;
+    background-color: white;
+    cursor: pointer;
+}

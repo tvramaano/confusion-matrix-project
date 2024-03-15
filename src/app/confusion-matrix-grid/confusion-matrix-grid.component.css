@@ -1,0 +1,14 @@
+.cm-grid{
+     background-color: antiquewhite;
+     height: 70px;
+     width: 80px;
+     float: left;
+     color: blue;
+     font-family: Arial, Helvetica, sans-serif;
+     font-weight: 600;
+     text-align: center;
+     padding-top: 30px;
+     padding-left: 10px;
+     padding-right: 10px;
+     border: 0.5px solid blue;;
+}

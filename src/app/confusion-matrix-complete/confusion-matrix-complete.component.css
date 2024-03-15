@@ -1,0 +1,128 @@
+.content-section{
+    float: left;
+    width: 48%;
+    margin: 1%;
+}
+
+.confusion-matrix-wrapper{
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-gap: 0px;
+}
+
+app-confusion-matrix-grid{
+    height: 100px;
+}
+
+button{
+    float: left;
+    width: 200px;
+    height: 80px;
+    border: 2px solid antiquewhite;
+    background-color: blue;
+    border-radius: 50px;
+    font-weight: 600;
+    color: antiquewhite;
+}
+
+button:hover{
+     background-color: antiquewhite;
+     border: 2px solid blue;
+     color: blue;
+     cursor: pointer;
+ }
+
+.fields-header-wrapper{
+    float: left;
+    background-color: antiquewhite;
+    width: 98%;
+    padding: 1%;
+}
+
+.fields-header-wrapper h3{
+    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.field_label_wrapper{
+    margin: 2%;
+    margin-left: 0;
+    width: 20%;
+}
+
+.field_label_wrapper,
+.field_label_wrapper label,
+.field_label_wrapper input{
+    float: left;
+}
+
+.field_label_wrapper label,
+.field_label_wrapper input{
+    width: 96%;
+    margin-bottom: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: blue;
+}
+
+.field_label_wrapper input{
+    height: 50px;
+    border-radius: 10px;
+    border-style: none;
+    font-size: 13px;
+    padding: 5px;
+}
+
+.results-section{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    color: antiquewhite;
+    margin: 2%;
+    margin-left: 1%;
+    width: 97%;
+    float: left;
+}
+
+.saved-items-section{
+    right: 0;
+    height: 100vh;
+    width: 30vw;
+    background-color: white;
+    position: fixed;
+    overflow-y: scroll;
+}
+
+.saved-items-header{
+    width: 94%;
+    padding: 3%;
+    float: left;
+}
+
+.saved-items-header h1{
+    width: 70%;
+    float: left;
+    color: blue;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.saved-items-header button{
+    float: right;
+    width: 50px;
+    height: 50px;
+}
+
+@media only screen and (max-width: 600px){
+    .field_label_wrapper{
+        width: 48%;
+    }
+
+    button{
+        width: 100%;
+    }
+}
+
+

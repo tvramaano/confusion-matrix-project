@@ -1,0 +1,103 @@
+<section class="fields-header-wrapper">
+    <h3>{{subtitle}}</h3>
+  
+    <section class="field_label_wrapper">
+        <label>True Positive</label>
+        <input #truePositive type="text" placeholder="Enter true positive here"/>
+    </section>
+
+    <section class="field_label_wrapper">
+        <label>True Negative</label>
+        <input #trueNegative type="text" placeholder="Enter true negative here"/>
+    </section>
+
+    <section class="field_label_wrapper">
+        <label>False Positive</label>
+        <input #falsePositive type="text" placeholder="Enter false positive here"/>
+    </section>
+
+    <section class="field_label_wrapper">
+        <label>False Negative</label>
+        <input #falseNegative type="text" placeholder="Enter false negative here">
+    </section>
+    <button 
+        (click)="generateAccuracies(
+                                    truePositive.value,
+                                    trueNegative.value,
+                                    falsePositive.value,
+                                    falseNegative.value
+                )"
+    >
+                Generate Accuracies
+    </button>
+
+    <button 
+        (click)="clearData()"
+    >
+                Clear All
+    </button>
+
+    <button 
+    (click)="savedItemsModal(false)"
+    >
+                Open
+    </button>
+
+    
+</section>
+<section
+    class="results-section"
+    *ngIf = "showAccuracy"
+>
+    Confusion Matrix and Accuracy Metric Results
+</section>
+<section class = "content-section confusion-matrix-wrapper" *ngIf = "showAccuracy">
+    <app-confusion-matrix-grid
+        *ngFor="let cm_cells of cm_grids; let i = index"
+        [grid_label]="cm_cells"
+    >
+    </app-confusion-matrix-grid>
+</section>
+
+<section class = "content-section" *ngIf = "showAccuracy">
+    
+    <app-accuracy-computations
+        *ngFor="let accuracy_type of accuracies"
+        
+        [tp]="truePositive.value"
+        [tn]="trueNegative.value"
+        [fp]="falsePositive.value"
+        [fn]="falseNegative.value"
+        [accuracyType]="accuracy_type"
+    >
+
+    </app-accuracy-computations>
+</section>
+
+<section
+    class="saved-items-section"
+    *ngIf = "showSavedItems"
+>
+    <section
+        class="saved-items-header"
+    >
+        <h1>Saved Items</h1>
+        <button
+            (click)="savedItemsModal(true)"
+        >X</button>
+    </section>
+    <app-saved-items
+        *ngFor="let temp_saved_item of temp_saved_items"   
+        [tp]="splitSavedItem(temp_saved_item)[0]"
+        [tn]="splitSavedItem(temp_saved_item)[1]"
+        [fp]="splitSavedItem(temp_saved_item)[2]"
+        [fn]="splitSavedItem(temp_saved_item)[3]"
+        [tpInput]="tpInput"
+        [tnInput]="tnInput"
+        [fpInput]="fpInput"
+        [fnInput]="fnInput"
+    >
+
+    </app-saved-items>
+</section>
+
